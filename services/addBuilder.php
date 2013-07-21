@@ -1,14 +1,15 @@
 <?php
 
-    require_once 'setup.php';
+    require_once "Setup.php";
     
-    $query = mysql_query("SELECT name FROM builders;");
-
-    $retval = mysql_fetch_object($query)->name;
-
-    $retval = trim($retval);
+    $str = "";
     
-    echo $retval;
-                
-    return true;
+    $result = mysql_query("SELECT * FROM builders;") or die(mysql_error());
+    
+    while ($row = mysql_fetch_object($result)) {
+        
+        $str = $str . $row->id;
+    }
+    
+    echo $str;
 ?>	

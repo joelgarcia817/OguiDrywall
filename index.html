@@ -53,7 +53,7 @@
     <!-- Builders Page -->
     <div id="builders_page" data-role="page">	
     
-      <div data-role='header' data-position='fixed' class='fixed_tool_bar'>
+      <div id="builders_page_header" data-role='header' data-position='fixed' class='fixed_tool_bar'>
         <div data-role='navbar'>
           <ul>
             <li><a href='#jobs_page'>Jobs</a></li>
@@ -64,7 +64,11 @@
         </div>
       </div>
       
-      <div data-role='content'>
+      <div id="builders_page_content" data-role='content'>
+        <br/><br/>
+        <ul id="builders_page_content_listview" data-role='listview' data-inset="true" data-filter="true" data-corners='true'>
+          <li><h3>No builders found</h3></li>
+        </ul>
       </div>
       
       <div data-role='footer' data-position='fixed' class='fixed_tool_bar'>
