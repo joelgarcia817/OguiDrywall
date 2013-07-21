@@ -74,12 +74,46 @@
       <div data-role='footer' data-position='fixed' class='fixed_tool_bar'>
         <div data-role='navbar'>
           <ul>
-            <li><a id='add_builder_button' href='#'>Add A Builder</a></li>
+            <li><a id='add_builder_button' href='#add_builder_page'>Add A Builder</a></li>
           </ul>
         </div>
       </div>
       
-    </div> <!-- Builders page -->
+    </div> <!-- Add Builder page -->
+    
+    <!-- Add Builder Page -->
+    <div id="add_builder_page" data-role="page" data-theme="b">	
+      
+      <div id="add_builder_page_content" data-role='content'>
+          <div data-role="fieldcontain">
+            <label for="add_builder_name">Company Name:</label><input type="text" name="add_builder_name" id="add_builder_name" value="" data-mini="true" />
+          </div>	
+          <div data-role="fieldcontain">
+            <label for="add_builder_address">Address:</label><input type="text" name="add_builder_address" id="add_builder_address" value="" data-mini="true" />
+          </div>
+          <div data-role="fieldcontain">
+            <label for="add_builder_contact">Contact Name:</label><input type="text" name="add_builder_contact" id="add_builder_contact" value="" data-mini="true" />
+          </div>
+          <div data-role="fieldcontain">
+            <label for="add_builder_email">Email:</label><input type="email" name="add_builder_email" id="add_builder_email" value="" data-mini="true" />
+          </div>
+          <div data-role="fieldcontain">
+            <label for="add_builder_phone">Phone:</label><input type="tel" name="add_builder_phone" id="add_builder_phone" value="" data-mini="true" />
+          </div>
+          <div data-role="fieldcontain">
+            <label for="add_builder_fax">Fax:</label><input type="tel" name="add_builder_fax" id="add_builder_fax" value="" data-mini="true" />
+          </div>
+          <fieldset class='ui-grid-a'>
+            <div class='ui-block-a'>
+              <a href="#" data-role="button">Save</a>
+            </div>
+            <div class='ui-block-b'>
+              <a href="#builders_page" data-role="button">Cancel</a>
+            </div>
+          </fieldset>
+      </div>
+      
+    </div> <!-- Add Builder page -->
     
   </body>
 </html>

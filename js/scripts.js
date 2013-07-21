@@ -4,7 +4,7 @@ $(function() {
   $.mobile.defaultPageTransition = 'none';
 
   $('.fixed_tool_bar').fixedtoolbar({ hideDuringFocus: "" });
-  $(document.body).on('vclick', '#add_builder_button', AddBuilder);
+  //$(document.body).on('vclick', '#add_builder_button', AddBuilder);
   $(document.body).on('pagechange', HandlePageChange);
   
 });
@@ -51,8 +51,8 @@ function AddBuilder() {
    function BuilderSuccessfullyAdded(str) {
    
       $('#add_builder_button').removeClass('ui-btn-active');
+      
       $.mobile.hidePageLoadingMsg();
-      alert('success' + str);
    }
 }
 
