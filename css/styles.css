@@ -5,3 +5,11 @@ text-align: center;
 .center-wrapper * {
 margin: 0 auto;
 }
+body {
+	padding-top: 45px;
+}
+
+.header-row
+{
+	background-color : #C4D8F2;
+}
