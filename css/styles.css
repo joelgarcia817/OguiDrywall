@@ -1,15 +1,10 @@
 
-.center-wrapper{
-text-align: center;
-}
-.center-wrapper * {
-margin: 0 auto;
-}
+
 body {
 	padding-top: 45px;
 }
 
-.header-row
+.subtext 
 {
-	background-color : #C4D8F2;
+	font-size : 90%;
 }

@@ -1,15 +1,19 @@
 <?php
 
+	$name = $_POST['name'];
+	$address = $_POST['address'];
+	$contact = $_POST['contact'];
+	$email = $_POST['email'];
+	$phone = $_POST['phone'];
+	$fax = $_POST['fax'];
+
+	$phone = str_replace("-", "", $phone);
+	$fax = str_replace("-", "", $fax);
+
     require_once "Setup.php";
     
-    $str = "";
-    
-    $result = mysql_query("SELECT * FROM builders;") or die(mysql_error());
-    
-    while ($row = mysql_fetch_object($result)) {
-        
-        $str = $str . $row->id;
-    }
-    
-    echo $str;
+    mysql_query("INSERT INTO builders (id, name, address, contact, telephone, email, fax) VALUES (uuid(), '"
+                . $name . "','" . $address . "','" . $contact . "'," . $phone . ",'" . $email . "'," . $fax . ");") or die(mysql_error());  
+
+    echo "success";
 ?>	
