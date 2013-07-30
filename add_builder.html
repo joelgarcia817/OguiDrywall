@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html>
+  <head> 
+    <title>Add Builder | Ogui Drywall</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head> 
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <a class="brand" href="#">Ogui Drywall</a>
+        <ul class="nav">
+          <li class="main_tab"><a data-type="jobs" href="jobs.html">Jobs</a></li>
+          <li class="main_tab active"><a data-type="builders" href="#">Builders</a></li>
+          <li class="main_tab"><a data-type="workers" href="#">Workers</a></li>
+          <li class="main_tab"><a data-type="invoices" href="#">Invoices</a></li>
+          <li class="main_tab"><a data-type="reports" href="#">Reports</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id='content'>
+      <form class="form-horizontal"> 
+        <div class="control-group">
+          <label class="control-label" for="add_builder_name">Builder Name</label> 
+          <div class="controls">
+            <input id="add_builder_name" type="text" placeholder="Builder Name" maxlength="100" class="add_builder_input">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="add_builder_address">Address</label> 
+          <div class="controls">
+            <input id="add_builder_address" type="text" placeholder="Address" maxlength="100" class="add_builder_input">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="add_builder_contact">Contact</label> 
+          <div class="controls">
+            <input id="add_builder_contact" type="text" placeholder="Contact" maxlength="100" class="add_builder_input">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="add_builder_email">Email</label> 
+          <div class="controls">
+            <input id="add_builder_email" type="text" placeholder="Email" maxlength="100"  class="add_builder_input">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="add_builder_phone">Phone</label> 
+          <div class="controls">
+            <input id="add_builder_phone" type="text" placeholder="ex. 222-222-2222" maxlength="12" class="add_builder_input">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="add_builder_fax">Fax</label> 
+          <div class="controls">
+            <input id="add_builder_fax" type="text" placeholder="ex. 222-222-2222" maxlength="12" class="add_builder_input">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="add_builder_fax">Prices</label> 
+          <div class="controls">
+            <table class="table" style="width:220px;">
+              <tr>
+                <td>$2.00/sq ft</td>
+                <td><a class="btn btn-mini btn-danger" href="#">Remove</a></td>
+              </tr>
+              <tr>
+                <td>$100 flat price</td>
+                <td><a class="btn btn-mini btn-danger" href="#">Remove</a></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td><a class="btn btn-mini btn-success" href="#">Add New</a></td>
+              </tr>
+            </table>  
+          </div>
+        </div>
+        <div class="form-actions">
+          <a type="button" class="btn btn-primary">Save changes</a>
+          <a type="button" class="btn" href="builders.html">Cancel</a>
+        </div>        
+      </form> 
+    </div>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

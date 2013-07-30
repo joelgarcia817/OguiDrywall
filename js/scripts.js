@@ -2,54 +2,16 @@
 $(function() {
 
   SetupEventHandlers();
+
+  LoadPage();
 });
 
-function HandleTabSwitchRequest(e) {
-  var tab = $(e.target);
+function LoadPage() {
 
-  if ( ! tab.closest("li").hasClass("active") ) {
-
-    GetTabData( tab.data("type") ); 
-
-    $(".main_tab").removeClass("active");
-
-    tab.closest("li").addClass("active");
-  }
-}
-
-function GetTabData(tabName) {
-
-  if ( tabName == "jobs" ) {
-    GetJobs();
-  }
-  else if ( tabName == "builders" ) {
+  if ( window.location.href.indexOf('/builders.html') > 0 ) {
     GetBuilders();
   }
-  else if ( tabName == "workers" ) {
-    GetWorkers();
-  }
-  else if ( tabName == "invoices") {
-    GetInvoices();
-  }
-  else if ( tabName == "reports") {
-    GetReports();
-  }
-}
 
-function GetJobs() {
-  $("#content").html("<h4>No jobs found</h4>")
-}
-
-function GetWorkers() {
-  $("#content").html("<h4>No workers found</h4>")
-}
-
-function GetInvoices() {
-  $("#content").html("<h4>No invoices found</h4>")
-}
-
-function GetReports() {
-  $("#content").html("<h4>No reports found</h4>")
 }
 
 function GetBuilders() {
@@ -105,8 +67,6 @@ function HideLoader() {
 }
 
 function SetupEventHandlers() {
-
-  $(".main_tab_link").click(HandleTabSwitchRequest);
 
   $(document.body).on("click", "#save_builder", SaveBuilder);
 }
