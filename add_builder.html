@@ -61,27 +61,50 @@
         <div class="control-group">
           <label class="control-label" for="add_builder_fax">Prices</label> 
           <div class="controls">
-            <table class="table" style="width:220px;">
-              <tr>
-                <td>$2.00/sq ft</td>
-                <td><a class="btn btn-mini btn-danger" href="#">Remove</a></td>
-              </tr>
-              <tr>
-                <td>$100 flat price</td>
-                <td><a class="btn btn-mini btn-danger" href="#">Remove</a></td>
-              </tr>
+            <table id="builder_prices_table" class="table" style="width:220px;">
               <tr>
                 <td>&nbsp;</td>
-                <td><a class="btn btn-mini btn-success" href="#">Add New</a></td>
+                <td><a class="btn btn-mini btn-success" role="button" href="#AddBuilderPriceModal" data-toggle="modal">Add New</a></td>
               </tr>
             </table>  
           </div>
         </div>
         <div class="form-actions">
-          <a type="button" class="btn btn-primary">Save changes</a>
-          <a type="button" class="btn" href="builders.html">Cancel</a>
+          <a id="save_builder_button" href="#" type="button" class="btn btn-primary">Save changes</a>
+          <a href="builders.html" type="button" class="btn" >Cancel</a>
         </div>        
       </form> 
+    </div>
+
+    <div id="AddBuilderPriceModal" class="modal hide fade">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h5>Add Builder Price</h5>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal"> 
+          <div class="control-group">
+            <label class="control-label" for="builder_price">Price:</label> 
+            <div class="controls">
+              <input id="builder_price" type="text" placeholder="Price" maxlength="7">
+            </div>
+          </div>  
+          <div class="control-group">
+            <label class="control-label" for="builder_price_type">Type:</label> 
+            <div class="controls">
+              <select id="builder_price_type">
+                <option value="1">By Square Foot</option>
+                <option value="2">Per Hour</option>
+                <option value="3">Flat Price</option>
+              </select>
+            </div>
+          </div>  
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button id="add_builder_price" class="btn btn-primary">Add Price</button>
+      </div>
     </div>
 
     <script src="js/jquery-1.9.1.min.js"></script>
