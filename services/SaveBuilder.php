@@ -7,17 +7,25 @@
 	$phone = $_POST['phone'];
 	$fax = $_POST['fax'];
 	$prices_string = $_POST['prices'];
+	$uuid = $_POST['uuid'];
 
 	$phone = str_replace("-", "", $phone);
 	$fax = str_replace("-", "", $fax);
 
     require_once "Setup.php";
-    require_once "GenerateUUID.php";
-
-    $uuid = gen_uuid();
     
-    mysql_query("INSERT INTO builders (id, name, address, contact, telephone, email, fax) VALUES ('" . $uuid . "', '"
-                . $name . "','" . $address . "','" . $contact . "'," . $phone . ",'" . $email . "'," . $fax . ");") or die(mysql_error()); 
+    if ( $uuid == "" ) {
+		mysql_query("INSERT INTO builders (id, name, address, contact, telephone, email, fax) VALUES ('" . $uuid . "', '"
+                    . $name . "','" . $address . "','" . $contact . "'," . $phone . ",'" . $email . "'," . $fax . ");") or die(mysql_error()); 
+    }
+    else {
+
+		mysql_query("UPDATE builders set name='" . $name . "', address='" . $address . "', contact='" . $contact . "', telephone=" . $phone . 
+			        ", email='" . $email . "', fax=" . $fax . " where id='" . $uuid . "';") or die(mysql_error()); 
+
+		mysql_query("DELETE FROM builder_prices WHERE builder_id='" . $uuid . "';") or die(mysql_error());
+    }
+    
 	
     $prices = explode("|", $prices_string);      
 

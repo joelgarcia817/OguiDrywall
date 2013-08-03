@@ -9,9 +9,9 @@
   <body>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
-        <a class="brand" href="#">Ogui Drywall</a>
+        <a class="brand" href="#">&nbsp;&nbsp;Ogui Drywall</a>
         <ul class="nav">
-          <li class="main_tab"><a data-type="jobs" href="jobs.html">Jobs</a></li>
+          <li class="main_tab"><a data-type="jobs" href="jobs.php">Jobs</a></li>
           <li class="main_tab active"><a data-type="builders" href="#">Builders</a></li>
           <li class="main_tab"><a data-type="workers" href="#">Workers</a></li>
           <li class="main_tab"><a data-type="invoices" href="#">Invoices</a></li>
@@ -64,14 +64,14 @@
             <table id="builder_prices_table" class="table" style="width:220px;">
               <tr>
                 <td>&nbsp;</td>
-                <td><a class="btn btn-mini btn-success" role="button" href="#AddBuilderPriceModal" data-toggle="modal">Add New</a></td>
+                <td><a class="btn btn-mini btn-success" role="button" href="#AddBuilderPriceModal" data-toggle="modal">Add Price</a></td>
               </tr>
             </table>  
           </div>
         </div>
         <div class="form-actions">
           <a id="save_builder_button" href="#" type="button" class="btn btn-primary">Save changes</a>
-          <a href="builders.html" type="button" class="btn" >Cancel</a>
+          <a href="builders.php" type="button" class="btn" >Cancel</a>
         </div>        
       </form> 
     </div>
@@ -107,8 +107,19 @@
       </div>
     </div>
 
+    <?php
+
+      $uuid = $_GET["uuid"];
+
+      if ( $uuid != "" ) {
+        echo "<input id='hdnfldUUID' type='hidden' value='" . $uuid . "' />";
+      }
+      
+    ?>
+
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/pg/addedit_builder.js"></script>
   </body>
 </html>
