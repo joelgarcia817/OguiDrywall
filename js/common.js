@@ -9,6 +9,13 @@ function IsEmail(email) {
   return regex.test(email);
 }
 
+function FormatPhoneNumber(phoneNumber) {
+
+	phoneNumber = [phoneNumber.slice(0, 3), "-", phoneNumber.slice(3,6),"-",phoneNumber.slice(6,10)].join('');
+
+	return phoneNumber;
+}
+
 function ShowErrorMessage(message) {
   alert(message);
 }

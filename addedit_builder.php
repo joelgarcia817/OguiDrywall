@@ -9,10 +9,10 @@
   <body>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
-        <a class="brand" href="#">&nbsp;&nbsp;Ogui Drywall</a>
+        <a class="brand" href="index.html">&nbsp;&nbsp;Ogui Drywall</a>
         <ul class="nav">
           <li class="main_tab"><a data-type="jobs" href="jobs.php">Jobs</a></li>
-          <li class="main_tab active"><a data-type="builders" href="#">Builders</a></li>
+          <li class="main_tab active"><a data-type="builders" href="builders.php">Builders</a></li>
           <li class="main_tab"><a data-type="workers" href="#">Workers</a></li>
           <li class="main_tab"><a data-type="invoices" href="#">Invoices</a></li>
           <li class="main_tab"><a data-type="reports" href="#">Reports</a></li>
@@ -71,6 +71,7 @@
         </div>
         <div class="form-actions">
           <a id="save_builder_button" href="#" type="button" class="btn btn-primary">Save changes</a>
+          <a id="delete_builder_button" href="#" type="button" class="btn hide">Delete Builder</a>
           <a href="builders.php" type="button" class="btn" >Cancel</a>
         </div>        
       </form> 

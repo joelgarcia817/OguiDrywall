@@ -3,6 +3,7 @@
 body 
 {
 	padding-top: 45px;
+	padding-left : 5px;
 }
 
 form
@@ -18,4 +19,9 @@ form
 .builder_row 
 {
 	cursor : pointer;
+}
+
+.builder_row:hover
+{
+	background-color : #FFFFCC;
 }

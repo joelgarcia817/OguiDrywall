@@ -13,8 +13,12 @@
 	$fax = str_replace("-", "", $fax);
 
     require_once "Setup.php";
+    require_once "GenerateUUID.php";
     
     if ( $uuid == "" ) {
+
+    	$uuid = gen_uuid();
+
 		mysql_query("INSERT INTO builders (id, name, address, contact, telephone, email, fax) VALUES ('" . $uuid . "', '"
                     . $name . "','" . $address . "','" . $contact . "'," . $phone . ",'" . $email . "'," . $fax . ");") or die(mysql_error()); 
     }

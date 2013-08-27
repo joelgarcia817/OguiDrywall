@@ -5,7 +5,7 @@
     $html = "";
     $row_count = 0;
     
-    $result = mysql_query("SELECT id, name, contact FROM builders ORDER BY name;"); /* or die(mysql_error()); */
+    $result = mysql_query("SELECT id, name, contact FROM builders ORDER BY name;") or die(mysql_error()); 
     $row_count = mysql_num_rows($result);
 
     $html = "<table class='table'><tr><td><a href='addedit_builder.php' role='button' class='btn btn-primary'>Add Builder</a></td></tr>";

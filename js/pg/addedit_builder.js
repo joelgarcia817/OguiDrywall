@@ -3,7 +3,11 @@ $(function() {
 
   SetupEventHandlers();
 
+  $("#builder_price").autoNumeric({ vMin: '0.00', vMax: '99999.99'});
+
   if ( $("#hdnfldUUID").size() > 0 ) {
+
+    $("#delete_builder_button").removeClass("hide");
     GetBuilderInfo();
   }
 
@@ -23,8 +27,8 @@ function GetBuilderInfo() {
    
       var parts = info.split("|");
 
-      var phone = ( parts[3] == "0" ) ? "" : parts[3];
-      var fax = ( parts[5] == "0" ) ? "" : parts[5];
+      var phone = ( parts[3] == "0" ) ? "" : FormatPhoneNumber(parts[3]);
+      var fax = ( parts[5] == "0" ) ? "" : FormatPhoneNumber(parts[5]);
 
       $("#add_builder_name").val(parts[0]);
       $("#add_builder_address").val(parts[1]);
@@ -83,6 +87,24 @@ function SaveBuilder(e) {
    
       window.location = "builders.php";
    }
+}
+
+function DeleteBuilder(e) {
+
+  if ( confirm("Are you sure you want to delete this builder?") ) {
+
+    var uuid = $("#hdnfldUUID").val();
+
+    $.ajax({ url: 'services/DeleteBuilder.php', 
+             data: { uuid:uuid },
+             type: 'POST', 
+             success: BuilderDeleted, 
+             error: ErrorOccurred } );
+  }
+
+  function BuilderDeleted() {
+    window.location = "builders.php";
+  }
 }
 
 function AllFieldsAreValidForBuilderSave() {
@@ -145,6 +167,7 @@ function HandleAddBuilderPriceClicked(e) {
 function SetupEventHandlers() {
 
   $("#add_builder_price").on("click", HandleAddBuilderPriceClicked);
+  $("#delete_builder_button").on("click", DeleteBuilder);
   $("#save_builder_button").on("click", SaveBuilder);
   $(document.body).on("click", ".remove_builder_price", RemoveBuilderPrice)
 }
